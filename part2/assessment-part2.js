@@ -49,6 +49,14 @@ function noWeakLink() {
 
 
 
+
+noWeakLink().then(res => {console.log(res); return thirdUser = res.data[9], firstUser = res.data[0]});
+
+
+// console.log(firstUser)
+// console.log(thirdUser);
+
+
 // *************
 // * PROBLEM 2 *
 // *************
@@ -75,6 +83,9 @@ function large() {
 }
 // CODE HERE...
 
+var boundToElephant = large.bind(elephant)
+boundToElephant();
+
 
 
 // *************
@@ -89,6 +100,9 @@ function large() {
 
 // CODE HERE...
 
+function deathStar(capacity, crew){
+  return capacity.bind(crew);
+}
 
 
 // *************
@@ -104,6 +118,11 @@ function large() {
 
 // CODE HERE...
 
+function accountingOffice(assets){
+  return function(liabilities){
+    return assets+liabilities;
+  }
+}
 
 
 // *************
@@ -129,7 +148,17 @@ function large() {
 
 // CODE HERE...
 
+function forgetter(name){
+  return function rememberall(item){
+    var name = {name,
+    remember}
+    name.remember.push(item);
+    return name;
+}
 
+me = forgetter('me');
+me('thingy')
+console.log(me('thingy'))
 
 // *************
 // * PROBLEM 6 *

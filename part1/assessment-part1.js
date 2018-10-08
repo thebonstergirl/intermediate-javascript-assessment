@@ -83,9 +83,20 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 // CODE HERE...
 
+function Vehicle(){
+  this.gasRemaining = 100;
+  // this.drive = function(){return this.gasRemaining -= 25;}
+}
+
+Vehicle.prototype.drive= function(){return this.gasRemaining-=25;}
+
+var charger = new Vehicle()
+var mustang = new Vehicle()
 
 
-
+charger.drive();
+mustang.drive();
+mustang.drive();
 
 // -----------------------------------------------------------------------------
 
@@ -108,7 +119,15 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 
 // CODE HERE...
-
+String.prototype.grammarPolice= function(){
+  var newArr = this.split(' ').map((item, i) => {
+    console.log(item.toLowerCase())
+      return item[0].toUpperCase() +
+      item.toLowerCase().slice(1);
+    })
+    for (let i = 0; i < newArr.length; i++)
+    return newArr.join(' ');
+  }
 
 
 // *************
@@ -127,6 +146,16 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 // CODE HERE...
 
+function valueType(var1, var2){
+  if (var1 === var2){
+    return "Exactly the same";
+  }
+  else if (var1 == var2){
+    return "Same value, different types"
+  }
+  else {return "Different values"}
+}
+
 
 
 // *************
@@ -141,3 +170,7 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 var theAnswer = "Unknown";
 
 // CODE HERE...
+
+function promiseCatcher(var1){
+  return var1.then(res=> {return theAnswer = res})
+}
