@@ -148,17 +148,15 @@ function accountingOffice(assets){
 
 // CODE HERE...
 
+rememberMe = [];
+
 function forgetter(name){
   return function rememberall(item){
-    var name = {name,
-    remember}
-    name.remember.push(item);
-    return name;
+    return {name,
+      remember: rememberMe.push(item)
+    }
+  }
 }
-
-me = forgetter('me');
-me('thingy')
-console.log(me('thingy'))
 
 // *************
 // * PROBLEM 6 *
@@ -185,3 +183,35 @@ console.log(me('thingy'))
 // NOTE: Neither hunger nor danger should be able to exceed 100 or drop below 0.
 
 // CODE HERE...
+
+function frodo (startingHungerValue, startingDangerValue){
+  var internalHungry = startingHungerValue;
+  var internalDanger = startingDangerValue;
+
+  return {
+    dinnerOverFire: function(){
+      if (internalHungry > 0)
+      internalHungry -= 25;
+      if (internalDanger < 55)
+      internalDanger = 100;
+      return {
+        hunger: internalHungry,
+        danger: internalDanger
+      }
+      
+    },
+    hidingInBush: function(){
+      if (internalHungry < 65)
+      internalHungry = 100;
+      if (internalDanger > 0);
+      internalDanger -= 20;
+     
+      return {
+        hunger: internalHungry,
+        danger: internalDanger
+      }
+    }
+    }
+  }
+  
+
